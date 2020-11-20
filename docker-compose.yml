@@ -1,0 +1,12 @@
+version: "3.6"
+services:
+  quandl_test_mongodb:
+    image: mongo:4.2.3-bionic
+    container_name: quandl_test_mongodb
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_DATABASE=RoboAdvisor
+    volumes:
+      - /data/quandl_test_mongodb:/data/db
+      - ./User interfaces/dump/RoboAdvisor:/data/dumps
